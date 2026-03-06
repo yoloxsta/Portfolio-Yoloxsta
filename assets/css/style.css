@@ -70,8 +70,10 @@ header {
   justify-content: space-between;
   padding: 1.7rem 10%;
   height: 6.5rem;
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(15, 20, 25, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 217, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1);
 }
 section {
   min-height: 100vh;
@@ -90,13 +92,18 @@ header .logo {
   font-size: 1.9rem;
   font-weight: 800;
   text-decoration: none;
-  color: #0e2431;
+  color: #00d9ff;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  transition: all 0.3s ease;
 }
 header .logo i {
   font-size: 2.2rem;
+  color: #00ff88;
 }
 header .logo:hover {
-  color: #fc8c05;
+  color: #00ff88;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+  transform: scale(1.05);
 }
 header .navbar ul {
   list-style: none;
@@ -109,16 +116,31 @@ header .navbar li {
 }
 header .navbar ul li a {
   font-size: 1.57rem;
-  color: #0e2431;
+  color: #e0e0e0;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.04rem;
   transition: 0.2s;
+  position: relative;
+}
+header .navbar ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d9ff, #00ff88);
+  transition: 0.3s;
+}
+header .navbar ul li a:hover::before,
+header .navbar ul li a.active::before {
+  width: 100%;
 }
 header .navbar ul li a.active,
 header .navbar ul li a:hover {
-  color: #011aff;
-  border-bottom: 0.2rem solid #011aff;
+  color: #00d9ff;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
   padding: 0.5rem 0;
 }
 /* navbar ends */
@@ -186,6 +208,7 @@ header .navbar ul li a:hover {
   gap: 1.5rem;
   min-height: 100vh;
   align-items: center;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
 }
 .home #particles-js {
   position: absolute;
@@ -201,6 +224,15 @@ header .navbar ul li a:hover {
   left: 0;
   height: 100%;
   width: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
 }
 .home .content {
   flex: 1 1 40rem;
@@ -224,24 +256,27 @@ header .navbar ul li a:hover {
 .home .content h2 {
   font-size: 5rem;
   font-weight: 800;
-  color: #002057;
+  color: #00d9ff;
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.5), 0 0 40px rgba(0, 217, 255, 0.3);
 }
 .home .content h2 span {
   font-size: 5rem;
   font-weight: 800;
-  color: #ff7b00;
+  color: #00ff88;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
 }
 .home .content p {
   font-size: 2.5rem;
-  color: #000;
+  color: #e0e0e0;
   font-weight: 600;
   padding: 1rem 0;
 }
 .home .content p span {
   font-size: 2.5rem;
-  color: rgb(148, 8, 8);
+  color: #00ff88;
   font-weight: 600;
   padding: 1rem 0;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
 }
 .home .btn {
   margin-top: 1rem;
@@ -250,10 +285,26 @@ header .navbar ul li a:hover {
   padding: 1.6rem 3rem;
   border-radius: 4em;
   transition: 0.5s;
-  color: #fff;
-  background: #2506ad;
-  box-shadow: 0px 5px 18px rgba(48, 68, 247, 0.6);
+  color: #000;
+  background: linear-gradient(90deg, #00d9ff 0%, #00ff88 100%);
+  box-shadow: 0px 5px 18px rgba(0, 217, 255, 0.6), 0 0 30px rgba(0, 255, 136, 0.3);
   font-family: "Nunito", sans-serif;
+  border: 2px solid rgba(0, 217, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+.home .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+}
+.home .btn:hover::before {
+  left: 100%;
 }
 .home .btn span {
   font-weight: 700;
@@ -266,7 +317,9 @@ header .navbar ul li a:hover {
   transition: 0.3s;
 }
 .home .btn:hover {
-  background: #1a047e;
+  background: linear-gradient(90deg, #00ff88 0%, #00d9ff 100%);
+  box-shadow: 0px 8px 25px rgba(0, 217, 255, 0.8), 0 0 50px rgba(0, 255, 136, 0.5);
+  transform: translateY(-3px);
 }
 .home .btn:hover i {
   transform: translateX(5px);
@@ -461,7 +514,21 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills {
   min-height: 90vh;
-  background: linear-gradient(to bottom, #57059e, #4a00e0);
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  position: relative;
+  overflow: hidden;
+}
+.skills::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 255, 0.03) 2px, rgba(0, 255, 255, 0.03) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 255, 255, 0.03) 2px, rgba(0, 255, 255, 0.03) 4px);
+  pointer-events: none;
 }
 .skills h2 {
   color: #fff;
@@ -489,12 +556,30 @@ header .navbar ul li a:hover {
   padding: 10px;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 22, 0.9);
-  transition: 0.2s;
+  background: rgba(0, 20, 40, 0.8);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.skills .container .bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+.skills .container .bar:hover::before {
+  transform: translateX(100%);
 }
 .skills .container .bar:hover {
-  box-shadow: 0 8px 10px rgba(0, 2, 68, 0.8) !important;
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.2) !important;
+  background-color: rgba(0, 30, 50, 0.9) !important;
+  border-color: rgba(0, 255, 255, 0.5);
+  transform: translateY(-5px);
 }
 .skills .container .bar .info {
   display: flex;
@@ -505,6 +590,14 @@ header .navbar ul li a:hover {
 }
 .skills .container .bar .info i {
   font-size: 4rem;
+}
+.skills .container .bar .info img {
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.3));
+  transition: all 0.3s ease;
+}
+.skills .container .bar:hover .info img {
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
+  transform: scale(1.1);
 }
 .skills .container .bar .info span {
   font-size: 2rem;
@@ -641,8 +734,20 @@ header .navbar ul li a:hover {
 
 /* work section starts */
 .work {
-  /* background: #010124; */
-  background: linear-gradient(to bottom, #000031, #00002c);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+}
+.work::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 100, 0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 .work h2 {
   color: #fff;
@@ -688,7 +793,8 @@ header .navbar ul li a:hover {
   height: 4.5rem;
   width: 100%;
   padding-left: 1rem;
-  background: #ffd900;
+  background: linear-gradient(90deg, #00d9ff 0%, #00b4d8 100%);
+  box-shadow: 0 2px 10px rgba(0, 217, 255, 0.3);
 }
 .work .box-container .box .content .tag h3 {
   font-size: 2rem;
@@ -1223,3 +1329,234 @@ form .button-area {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+
+/* DevOps themed animations */
+@keyframes pipeline-flow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.4);
+  }
+}
+
+/* DevOps badge effect */
+.home .content h2::after {
+  content: "🚀";
+  display: inline-block;
+  margin-left: 1rem;
+  animation: pipeline-flow 2s ease-in-out infinite;
+}
+
+/* Terminal-like effect for typing text */
+.typing-text {
+  font-family: 'Courier New', monospace;
+  color: #00ff00 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* CI/CD Pipeline visual effect */
+.skills h2::before {
+  content: "⚙️ ";
+  animation: pipeline-flow 3s ease-in-out infinite;
+}
+
+.work h2::before {
+  content: "🔧 ";
+  animation: pipeline-flow 2.5s ease-in-out infinite;
+}
+
+/* Enhanced DevOps Terminal Theme */
+@keyframes terminal-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes deploy-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes code-scan {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Terminal cursor effect */
+.typing-text::after {
+  content: "▊";
+  animation: terminal-blink 1s infinite;
+  color: #00ff88;
+  margin-left: 3px;
+}
+
+/* Add terminal prompt before name */
+.home .content h2::before {
+  content: "$ whoami > ";
+  font-size: 3rem;
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+  margin-right: 1rem;
+  opacity: 0.8;
+}
+
+/* DevOps badge floating effect */
+.home .image {
+  position: relative;
+}
+
+.home .image::before {
+  content: "🐳 Docker | ☸️ K8s | ⚡ CI/CD";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.9), rgba(0, 255, 136, 0.9));
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 5px 20px rgba(0, 217, 255, 0.5);
+  animation: deploy-pulse 3s ease-in-out infinite;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* Scanning line effect on skills */
+.skills .container {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills .container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  animation: code-scan 8s linear infinite;
+  pointer-events: none;
+}
+
+/* Pipeline status indicators */
+.work .box-container .box::before {
+  content: "✓ Deployed";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 255, 136, 0.9);
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* Experience timeline with pipeline colors */
+.experience .container::after {
+  background: linear-gradient(135deg, #00d9ff, #00ff88) !important;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+}
+
+.experience .content {
+  background: linear-gradient(135deg, #1a2332, #2d3e50) !important;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.experience .content .tag {
+  color: #00d9ff;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+/* Scroll indicator with DevOps theme */
+#scroll-top {
+  background: linear-gradient(135deg, #00d9ff, #00ff88);
+  color: #000;
+  box-shadow: 0 5px 20px rgba(0, 217, 255, 0.5);
+}
+
+#scroll-top:hover {
+  box-shadow: 0 8px 30px rgba(0, 217, 255, 0.8);
+  transform: scale(1.1);
+}
+
+/* Footer DevOps theme */
+.footer {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  border-top: 2px solid rgba(0, 217, 255, 0.3);
+}
+
+.footer .box-container .box h3 {
+  color: #00d9ff !important;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+/* Social icons DevOps glow */
+.social-icons a {
+  background: linear-gradient(135deg, #1a2332, #2d3e50) !important;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+.social-icons a:hover {
+  background: linear-gradient(135deg, #00d9ff, #00ff88) !important;
+  color: #000 !important;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+  transform: translateY(-5px);
+}
+
+/* Code-like font for specific elements */
+.about .row .content .tag {
+  font-family: 'Courier New', monospace;
+  color: #00ff88 !important;
+  background: rgba(0, 255, 136, 0.1);
+  padding: 5px 15px;
+  border-radius: 5px;
+  border-left: 3px solid #00ff88;
+}
+
+/* Heading DevOps style */
+.heading {
+  position: relative;
+  color: #00d9ff !important;
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+.heading span {
+  color: #00ff88 !important;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.heading::before {
+  content: "// ";
+  color: #666;
+  font-family: 'Courier New', monospace;
+  margin-right: 10px;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #00d9ff, #00ff88);
+  margin: 10px auto;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
