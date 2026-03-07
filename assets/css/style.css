@@ -1560,3 +1560,174 @@ form .button-area {
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
+
+/* certifications section starts */
+.certifications {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #0a0e27 100%);
+  position: relative;
+}
+
+.certifications::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 30% 40%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.certifications h2 {
+  color: #00d9ff;
+  position: relative;
+  z-index: 1;
+}
+
+.certifications .heading span {
+  color: #00ff88;
+}
+
+.certifications .box-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin: 3rem auto;
+  max-width: 1400px;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.certifications .cert-box {
+  background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(15, 20, 25, 0.9));
+  border: 2px solid rgba(0, 217, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.certifications .cert-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+  transition: 0.6s;
+}
+
+.certifications .cert-box:hover::before {
+  left: 100%;
+}
+
+.certifications .cert-box:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 217, 255, 0.6);
+  box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3), 0 0 30px rgba(0, 255, 136, 0.2);
+  background: linear-gradient(135deg, rgba(26, 35, 50, 1), rgba(15, 20, 25, 1));
+}
+
+.certifications .cert-icon {
+  font-size: 3.5rem;
+  color: #00d9ff;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 255, 136, 0.1));
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  transition: all 0.4s ease;
+}
+
+.certifications .cert-box:hover .cert-icon {
+  transform: rotate(360deg) scale(1.1);
+  color: #00ff88;
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
+}
+
+.certifications .cert-content {
+  flex: 1;
+}
+
+.certifications .cert-content h3 {
+  font-size: 1.7rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.certifications .cert-content p {
+  font-size: 1.3rem;
+  color: #00d9ff;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.certifications .cert-date {
+  display: inline-block;
+  background: linear-gradient(90deg, #00d9ff, #00ff88);
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+  box-shadow: 0 3px 10px rgba(0, 217, 255, 0.3);
+}
+
+/* certifications media queries starts */
+@media screen and (max-width: 1200px) {
+  .certifications .box-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .certifications .box-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .certifications .box-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 2rem;
+  }
+  
+  .certifications .cert-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .certifications .cert-icon {
+    margin-bottom: 1rem;
+  }
+}
+/* certifications media queries ends */
+/* certifications section ends */
+
+/* Custom Kubernetes cursor */
+* {
+  cursor: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'), auto;
+}
+
+/* For clickable elements, use pointer version */
+a, button, .btn, input[type="submit"], input[type="button"], .cert-box, .bar, .box {
+  cursor: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'), pointer;
+}
