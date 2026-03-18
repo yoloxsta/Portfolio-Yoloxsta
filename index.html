@@ -69,7 +69,14 @@
         <span class="terminal-title">kubectl — bash</span>
       </div>
       <div class="terminal-cmd">$ kubectl get pods -n production</div>
+      <div class="terminal-output">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;READY&nbsp;&nbsp;STATUS&nbsp;&nbsp;&nbsp;RESTARTS</div>
+      <div class="terminal-output">app-deploy-7d4b8c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1/1&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;0</div>
+      <div class="terminal-output">api-gateway-5f9a2e&nbsp;&nbsp;&nbsp;&nbsp;1/1&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;0</div>
       <img draggable="false" class="tilt" src="./assets/images/cmsoon.png" alt="">
+      <div class="terminal-cmd">$ kubectl get nodes</div>
+      <div class="terminal-output">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;ROLES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VERSION</div>
+      <div class="terminal-output">master-01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;control-plane&nbsp;v1.29.0</div>
+      <div class="terminal-output">worker-01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;&lt;none&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v1.29.0</div>
       <div class="terminal-cmd bottom">$ kubectl get svc --all-namespaces</div>
     </div>
 </div>

@@ -2105,6 +2105,16 @@ section {
   border-top: 1px solid rgba(0, 217, 255, 0.2);
 }
 
+.terminal-output {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  color: #aaa;
+  padding: 2px 15px;
+  text-transform: none;
+  white-space: pre;
+  overflow: hidden;
+}
+
 .terminal-frame img {
   width: 100%;
   display: block;
