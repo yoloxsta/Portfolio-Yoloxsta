@@ -2059,7 +2059,7 @@ section {
 .terminal-header {
   display: flex;
   align-items: center;
-  padding: 10px 15px;
+  padding: 8px 15px;
   background: rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid rgba(0, 217, 255, 0.3);
 }
@@ -2091,7 +2091,7 @@ section {
   font-family: 'Courier New', monospace;
   font-size: 1.1rem;
   color: #00ff88;
-  padding: 8px 15px;
+  padding: 5px 15px;
   text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
   animation: terminal-blink 3s ease-in-out infinite;
   text-transform: none;
@@ -2107,9 +2107,9 @@ section {
 
 .terminal-output {
   font-family: 'Courier New', monospace;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #aaa;
-  padding: 2px 15px;
+  padding: 1px 15px;
   text-transform: none;
   white-space: pre;
   overflow: hidden;
