@@ -2206,3 +2206,61 @@ section {
     font-size: 1.1rem;
   }
 }
+
+/* Experience DevOps enhancements */
+.pipeline-status {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  padding: 4px 12px;
+  border-radius: 15px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.pipeline-status.active {
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.15);
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  animation: status-blink 2s ease-in-out infinite;
+}
+
+@keyframes status-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pipeline-status.completed {
+  color: #00d9ff;
+  background: rgba(0, 217, 255, 0.15);
+  border: 1px solid rgba(0, 217, 255, 0.4);
+}
+
+.exp-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.exp-tools span {
+  font-size: 1.1rem;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  color: #00d9ff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: 'Courier New', monospace;
+  text-transform: none;
+  transition: all 0.3s ease;
+}
+
+.exp-tools span:hover {
+  background: rgba(0, 217, 255, 0.25);
+  border-color: #00ff88;
+  color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
+}
