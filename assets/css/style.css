@@ -630,11 +630,14 @@ header .navbar ul li a:hover {
   font-size: 4rem;
 }
 .skills .container .bar .info img {
-  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.3));
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.3)) brightness(1.2);
   transition: all 0.3s ease;
 }
 .skills .container .bar:hover .info img {
-  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6)) brightness(1.4);
   transform: scale(1.1);
 }
 .skills .container .bar .info span {
