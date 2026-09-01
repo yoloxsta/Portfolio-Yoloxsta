@@ -2532,19 +2532,23 @@ section {
   .about .row .image {
     order: -1;
     flex: 1 1 100%;
+    margin-bottom: 2rem;
   }
   
   .about .row .image img {
     width: 70%;
     margin: 0 auto;
     max-width: 300px;
+    display: block;
   }
   
   .about .row .content {
     flex: 1 1 100%;
     padding: 1.5rem;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
   }
   
   .about .row .content h3 {
@@ -2933,13 +2937,27 @@ section {
   }
   
   /* About */
+  .about .row {
+    gap: 2rem;
+  }
+  
+  .about .row .image {
+    margin-bottom: 1rem;
+  }
+  
   .about .row .image img {
     width: 80%;
     max-width: 250px;
   }
   
+  .about .row .content {
+    padding-top: 0;
+  }
+  
   .about .row .content h3 {
     font-size: 2rem;
+    color: #00d9ff;
+    text-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
   }
   
   .about .row .content .tag {
