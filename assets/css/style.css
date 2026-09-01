@@ -2526,35 +2526,37 @@ section {
   .about .row {
     flex-direction: column;
     padding: 2rem 1rem;
-    gap: 3rem;
+    gap: 0;
   }
   
   .about .row .image {
-    order: -1;
-    flex: 1 1 100%;
-    margin-bottom: 2rem;
+    order: 1;
+    flex: none;
+    width: 100%;
+    margin-bottom: 3rem;
+    display: block;
   }
   
   .about .row .image img {
     width: 70%;
     margin: 0 auto;
-    max-width: 300px;
+    max-width: 280px;
     display: block;
   }
   
   .about .row .content {
-    flex: 1 1 100%;
-    padding: 1.5rem;
+    order: 2;
+    flex: none;
+    width: 100%;
+    padding: 0 1.5rem;
     text-align: center;
-    margin-top: 0;
-    position: relative;
-    z-index: 1;
   }
   
   .about .row .content h3 {
     font-size: 2.2rem;
     color: #00d9ff;
     text-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+    margin-top: 0;
   }
   
   .about .row .content p {
@@ -2938,20 +2940,20 @@ section {
   
   /* About */
   .about .row {
-    gap: 2rem;
+    padding: 1rem 0.5rem;
   }
   
   .about .row .image {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   
   .about .row .image img {
-    width: 80%;
-    max-width: 250px;
+    width: 75%;
+    max-width: 220px;
   }
   
   .about .row .content {
-    padding-top: 0;
+    padding: 0 1rem;
   }
   
   .about .row .content h3 {
