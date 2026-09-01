@@ -5,6 +5,12 @@ $(document).ready(function () {
         $('.navbar').toggleClass('nav-toggle');
     });
 
+    // Close mobile menu when clicking a nav link
+    $('.navbar ul li a').click(function () {
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+    });
+
     $(window).on('scroll load', function () {
         $('#menu').removeClass('fa-times');
         $('.navbar').removeClass('nav-toggle');
@@ -59,7 +65,7 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Jigar Sable";
+            document.title = "Portfolio | Soe Tint Aung";
             $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {

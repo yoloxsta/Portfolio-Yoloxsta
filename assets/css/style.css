@@ -2316,3 +2316,941 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================
+   ENHANCED MOBILE RESPONSIVE STYLES
+   ========================================== */
+
+/* Tablet Landscape (1024px and below) */
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 1.5rem 5%;
+  }
+  
+  section {
+    padding: 2rem 5%;
+  }
+  
+  .home .image img {
+    width: 60%;
+    margin-left: 4rem;
+  }
+  
+  .terminal-frame {
+    width: 75%;
+    margin-left: 4rem;
+  }
+  
+  .skills .container .row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .certifications .box-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .work .box-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 58%;
+  }
+  
+  header {
+    padding: 1.5rem 4%;
+    height: 6rem;
+  }
+  
+  header .logo {
+    font-size: 1.7rem;
+  }
+  
+  header .logo i {
+    font-size: 2rem;
+  }
+  
+  /* Navbar mobile */
+  #menu {
+    display: block;
+    font-size: 2.5rem;
+    color: #00d9ff;
+    z-index: 1001;
+  }
+  
+  header .navbar {
+    position: fixed;
+    top: 6rem;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - 6rem);
+    background: linear-gradient(135deg, rgba(10, 14, 39, 0.98) 0%, rgba(15, 20, 25, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    border-left: 1px solid rgba(0, 217, 255, 0.3);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  header .navbar.nav-toggle {
+    right: 0;
+  }
+  
+  header .navbar ul {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 0;
+  }
+  
+  header .navbar ul li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+  }
+  
+  header .navbar ul li a {
+    font-size: 1.8rem;
+    padding: 1.5rem 1rem;
+    display: block;
+    width: 100%;
+    color: #e0e0e0;
+  }
+  
+  header .navbar ul li a:hover,
+  header .navbar ul li a.active {
+    background: rgba(0, 217, 255, 0.1);
+    color: #00d9ff;
+  }
+  
+  /* Hero section */
+  .home {
+    flex-direction: column-reverse;
+    padding-top: 8rem;
+    gap: 2rem;
+  }
+  
+  .home .content {
+    text-align: center;
+    padding: 2rem 1rem;
+    flex: 1 1 100%;
+  }
+  
+  .home .content h2 {
+    font-size: 3.5rem;
+  }
+  
+  .home .content h2::before {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .home .content h2::after {
+    font-size: 2.5rem;
+    margin-left: 0.5rem;
+  }
+  
+  .home .content p {
+    font-size: 2rem;
+  }
+  
+  .home .btn {
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  .home .image {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home .image img {
+    width: 70%;
+    margin: 0 auto;
+    margin-left: 0;
+  }
+  
+  .terminal-frame {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+  
+  .terminal-header {
+    padding: 6px 12px;
+  }
+  
+  .terminal-dots .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .terminal-title {
+    font-size: 1.1rem;
+  }
+  
+  .terminal-cmd {
+    font-size: 1rem;
+    padding: 4px 12px;
+  }
+  
+  .terminal-output {
+    font-size: 0.85rem;
+    padding: 1px 12px;
+  }
+  
+  .socials {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .socials .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .socials .social-icons li {
+    margin-bottom: 0;
+  }
+  
+  /* About section */
+  .about .row {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 3rem;
+  }
+  
+  .about .row .image {
+    order: -1;
+    flex: 1 1 100%;
+  }
+  
+  .about .row .image img {
+    width: 70%;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  
+  .about .row .content {
+    flex: 1 1 100%;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .about .row .content h3 {
+    font-size: 2.2rem;
+  }
+  
+  .about .row .content p {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+  
+  .about .row .content .box-container {
+    justify-content: center;
+  }
+  
+  .resumebtn {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  /* Skills section */
+  .skills {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  
+  .skills .container {
+    width: 95%;
+    padding: 2rem;
+  }
+  
+  .skills .container .row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .skills .container .bar {
+    padding: 1.5rem 1rem;
+  }
+  
+  .skills .container .bar .info i {
+    font-size: 3rem;
+  }
+  
+  .skills .container .bar .info img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .skills .container .bar .info span {
+    font-size: 1.4rem;
+  }
+  
+  /* Education section */
+  .education {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  
+  .education .box-container .box {
+    width: 95%;
+    flex-direction: column;
+  }
+  
+  .education .box-container .box .image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .education .box-container .box img {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .education .box-container .box .content {
+    padding: 1.5rem;
+  }
+  
+  .education .box-container .box .content h3 {
+    font-size: 2rem;
+  }
+  
+  .education .box-container .box .content p {
+    font-size: 1.3rem;
+  }
+  
+  .education h4 {
+    font-size: 1.6rem;
+  }
+  
+  .education .qoute {
+    font-size: 1.3rem;
+    padding: 0 1rem;
+  }
+  
+  /* Certifications section */
+  .certifications {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  
+  .certifications .box-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .certifications .cert-box {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .certifications .cert-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2.5rem;
+    min-width: 50px;
+  }
+  
+  .certifications .cert-content h3 {
+    font-size: 1.4rem;
+  }
+  
+  .certifications .cert-content p {
+    font-size: 1.1rem;
+  }
+  
+  .certifications .cert-date {
+    font-size: 1rem;
+  }
+  
+  /* Work/Projects section */
+  .work {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  
+  .work .box-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 1rem;
+    gap: 1.5rem;
+  }
+  
+  .work .box-container .box {
+    padding: 1.5rem;
+  }
+  
+  .work .box-container .box .content .tag h3 {
+    font-size: 1.5rem;
+  }
+  
+  .work .box-container .box .content .tag {
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+  
+  .work .box-container .box::before {
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .work .desc p {
+    font-size: 1.2rem;
+  }
+  
+  .work .desc .btns {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .work .desc .btns .btn {
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  
+  /* Experience section */
+  .experience {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  
+  .experience .timeline::after {
+    left: 20px;
+  }
+  
+  .experience .container {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 15px;
+  }
+  
+  .experience .container::after {
+    left: 11px;
+    width: 24px;
+    height: 24px;
+    font-size: 1.4rem;
+  }
+  
+  .experience .container::before {
+    left: 40px !important;
+    border-width: 10px 10px 10px 0 !important;
+    border-color: transparent rgba(26, 35, 50, 0.95) transparent transparent !important;
+  }
+  
+  .experience .left,
+  .experience .right {
+    left: 0;
+  }
+  
+  .experience .right::after {
+    left: 11px;
+  }
+  
+  .experience .content {
+    padding: 1.5rem;
+  }
+  
+  .experience .content .tag h2 {
+    font-size: 1.8rem;
+  }
+  
+  .experience .content .desc h3 {
+    font-size: 1.3rem;
+  }
+  
+  .experience .content .desc p {
+    font-size: 1.1rem;
+  }
+  
+  .pipeline-status {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .exp-tools span {
+    font-size: 1rem;
+    padding: 3px 8px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 3rem 0;
+  }
+  
+  .footer .box-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer .box-container .box {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .footer .box-container .box h3 {
+    font-size: 2rem;
+  }
+  
+  .footer .box-container .box p {
+    font-size: 1.3rem;
+  }
+  
+  .footer .box-container .box a {
+    font-size: 1.3rem;
+  }
+  
+  .footer .box-container .box .share {
+    justify-content: center;
+  }
+  
+  .footer .box-container .box .share a {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile Landscape (576px and below) */
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 55%;
+  }
+  
+  section {
+    padding: 2rem 3%;
+  }
+  
+  /* Navbar */
+  header {
+    height: 5.5rem;
+    padding: 1rem 3%;
+  }
+  
+  header .navbar {
+    top: 5.5rem;
+    width: 85%;
+  }
+  
+  #menu {
+    font-size: 2.2rem;
+  }
+  
+  header .logo {
+    font-size: 1.5rem;
+  }
+  
+  header .logo i {
+    font-size: 1.8rem;
+  }
+  
+  /* Hero */
+  .home {
+    padding-top: 7rem;
+  }
+  
+  .home .content h2 {
+    font-size: 2.8rem;
+  }
+  
+  .home .content h2::before {
+    font-size: 1.6rem;
+  }
+  
+  .home .content h2::after {
+    font-size: 2rem;
+  }
+  
+  .home .content p {
+    font-size: 1.6rem;
+  }
+  
+  .home .content p span {
+    font-size: 1.6rem;
+  }
+  
+  .terminal-frame {
+    width: 95%;
+    padding: 0;
+  }
+  
+  .terminal-header {
+    padding: 5px 10px;
+  }
+  
+  .terminal-dots .dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .terminal-title {
+    font-size: 1rem;
+  }
+  
+  .terminal-cmd {
+    font-size: 0.85rem;
+    padding: 3px 10px;
+  }
+  
+  .terminal-output {
+    font-size: 0.7rem;
+    padding: 1px 10px;
+  }
+  
+  .home .btn {
+    padding: 1.3rem 2.5rem;
+  }
+  
+  .home .btn span {
+    font-size: 1.5rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.8rem;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+  
+  /* About */
+  .about .row .image img {
+    width: 80%;
+    max-width: 250px;
+  }
+  
+  .about .row .content h3 {
+    font-size: 2rem;
+  }
+  
+  .about .row .content .tag {
+    font-size: 1.2rem;
+  }
+  
+  .about .row .content p {
+    font-size: 1.3rem;
+  }
+  
+  .resumebtn .btn {
+    padding: 1.3rem 2.5rem;
+  }
+  
+  .resumebtn .btn span {
+    font-size: 1.5rem;
+  }
+  
+  /* Skills */
+  .skills .container {
+    padding: 1.5rem;
+    width: 100%;
+    border-radius: 0;
+  }
+  
+  .skills .container .row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .skills .container .bar {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .skills .container .bar .info i {
+    font-size: 2.5rem;
+  }
+  
+  .skills .container .bar .info img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .skills .container .bar .info span {
+    font-size: 1.2rem;
+  }
+  
+  /* Education */
+  .education .box-container .box {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  
+  .education .box-container .box .image {
+    height: 180px;
+  }
+  
+  .education .box-container .box .content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .education .box-container .box .content p {
+    font-size: 1.2rem;
+  }
+  
+  .education h4 {
+    font-size: 1.4rem;
+  }
+  
+  /* Certifications */
+  .certifications .box-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .certifications .cert-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  .certifications .cert-icon {
+    margin-bottom: 1rem;
+  }
+  
+  .certifications .cert-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .certifications .cert-content p {
+    font-size: 1.1rem;
+  }
+  
+  /* Work */
+  .work .box-container {
+    grid-template-columns: 1fr;
+    margin: 1.5rem 0.5rem;
+  }
+  
+  .work .box-container .box {
+    padding: 1.5rem;
+  }
+  
+  .work .box-container .box .content .tag h3 {
+    font-size: 1.4rem;
+  }
+  
+  .work .desc p {
+    font-size: 1.1rem;
+  }
+  
+  .work .desc .btns .btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .work .viewall .btn {
+    padding: 1.3rem 2.5rem;
+  }
+  
+  .work .viewall .btn span {
+    font-size: 1.5rem;
+  }
+  
+  /* Experience */
+  .experience .timeline::after {
+    left: 15px;
+  }
+  
+  .experience .container {
+    padding-left: 40px;
+    padding-right: 10px;
+  }
+  
+  .experience .container::after {
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .experience .container::before {
+    left: 30px !important;
+  }
+  
+  .experience .content {
+    padding: 1.2rem;
+  }
+  
+  .experience .content .tag h2 {
+    font-size: 1.6rem;
+  }
+  
+  .experience .content .desc h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Footer */
+  .footer .box-container .box h3 {
+    font-size: 1.8rem;
+  }
+  
+  .footer .box-container .box p {
+    font-size: 1.2rem;
+  }
+  
+  .footer .credit {
+    font-size: 1.3rem;
+  }
+  
+  /* Scroll top */
+  #scroll-top {
+    right: 1rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.8rem;
+  }
+}
+
+/* Very small screens (320px and below) */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 50%;
+  }
+  
+  header .navbar {
+    width: 95%;
+  }
+  
+  .home .content h2 {
+    font-size: 2.4rem;
+  }
+  
+  .terminal-cmd {
+    font-size: 0.75rem;
+  }
+  
+  .terminal-output {
+    font-size: 0.65rem;
+  }
+  
+  .skills .container .row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  
+  .skills .container .bar {
+    padding: 1.2rem 0.5rem;
+  }
+  
+  .skills .container .bar .info img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .skills .container .bar .info span {
+    font-size: 1.1rem;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  .home {
+    min-height: auto;
+    padding: 8rem 5% 4rem;
+  }
+  
+  .home .content h2 {
+    font-size: 3rem;
+  }
+  
+  .terminal-frame {
+    width: 50%;
+  }
+  
+  .education .box-container .box {
+    flex-direction: row;
+  }
+  
+  .education .box-container .box .image {
+    width: 40%;
+    height: 200px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices for better performance */
+  .home .btn:hover {
+    transform: none;
+  }
+  
+  .skills .container .bar:hover {
+    transform: none;
+  }
+  
+  .work .box-container .box:hover {
+    transform: none;
+  }
+  
+  .certifications .cert-box:hover {
+    transform: none;
+  }
+  
+  /* Larger touch targets */
+  header .navbar ul li a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icons a {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  
+  .work .desc .btns .btn {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .skills .container .bar .info img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Print styles */
+@media print {
+  header,
+  .home #particles-js,
+  .loader-container,
+  #scroll-top,
+  .socials {
+    display: none;
+  }
+  
+  body {
+    background: white;
+  }
+  
+  .home,
+  .about,
+  .skills,
+  .education,
+  .certifications,
+  .work,
+  .experience,
+  .footer {
+    background: white;
+    color: black;
+    min-height: auto;
+    page-break-inside: avoid;
+  }
+}
